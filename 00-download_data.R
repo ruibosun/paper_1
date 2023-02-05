@@ -37,12 +37,14 @@ raw_data <- filter(datastore_resources, row_number()==1) %>% get_resource()
 data<-raw_data%>%select(`Age Group`,`Source of Infection`, `Client Gender`,Outcome)
 
 
-#### What's next? ####
-sum(is.na(data$`Age Group`))
-sum(is.na(data$`Source of Infection`))
-sum(is.na(data$`Client Gender`))
-sum(is.na(data$Outcome))
-# there is no NA in this data set, and no need to clean it
+#tests
+data$`Age Group`|> class() == "character"
+
+data$`Source of Infection` |> class() == "character"
+
+data$`Client Gender`|> class() == "character"
+
+data$Outcome |> class() == "character"
 
 
 
